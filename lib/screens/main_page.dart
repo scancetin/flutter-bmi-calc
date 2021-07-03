@@ -35,7 +35,6 @@ class _BmiCalcState extends State<BmiCalc> {
               boxWidth: 0.50,
               widget: GenderWidget(
                   genderType: "MALE",
-                  gender: _gender,
                   onPressed: () {
                     setState(() {
                       _gender = false;
@@ -47,7 +46,6 @@ class _BmiCalcState extends State<BmiCalc> {
               boxWidth: 0.50,
               widget: GenderWidget(
                   genderType: "FEMALE",
-                  gender: _gender,
                   onPressed: () {
                     setState(() {
                       _gender = true;
