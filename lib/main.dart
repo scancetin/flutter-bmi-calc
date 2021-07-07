@@ -11,9 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter BMI Calculator',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: ThemeData.dark(),
       home: BmiCalc(),
     );
   }
