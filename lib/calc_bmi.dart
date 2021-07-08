@@ -12,7 +12,7 @@ class CalcBmi {
 
   String getResult(double _bmi) {
     if (_bmi > 30) {
-      return "Obesity";
+      return 'Obesity';
     } else if (_bmi >= 25) {
       return 'Overweight';
     } else if (_bmi > 18.5) {

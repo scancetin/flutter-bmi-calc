@@ -11,45 +11,36 @@ class AgeWeightWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            widgetType,
-            style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20)),
-          ),
-          Text(
-            value.toString(),
-            style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w900)),
-          ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              GestureDetector(
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Color(0xFF51515C)),
-                  child: Icon(FontAwesomeIcons.plus),
-                ),
-                onTap: onPlus,
-              ),
-              GestureDetector(
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Color(0xFF51515C)),
-                  child: Icon(FontAwesomeIcons.minus),
-                ),
-                onTap: onMinus,
-              )
-            ],
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          widgetType,
+          style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20)),
+        ),
+        Text(
+          value.toString(),
+          style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w900)),
+        ),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Color(0xFF51515C)),
+              child: IconButton(icon: Icon(FontAwesomeIcons.plus), onPressed: onPlus),
+            ),
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Color(0xFF51515C)),
+              child: IconButton(icon: Icon(FontAwesomeIcons.minus), onPressed: onMinus),
+            ),
+          ],
+        )
+      ],
     );
   }
 }

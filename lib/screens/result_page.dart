@@ -12,47 +12,43 @@ class ResultPage extends StatelessWidget {
   Widget build(BuildContext context) {
     CalcBmi calc = CalcBmi(height: height, weight: weight);
     double _bmi = calc.calcBmi();
+
     return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Column(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height * 0.15,
-              alignment: Alignment.center,
-              child: Text(
-                "Your Results",
-                style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w700)),
-              ),
+      body: Column(
+        children: [
+          Spacer(),
+          Expanded(
+            flex: 3,
+            child: Text(
+              "Your Results",
+              style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 40, fontWeight: FontWeight.w700)),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height * 0.75,
+          ),
+          Expanded(
+            flex: 27,
+            child: Container(
               margin: EdgeInsets.all(10),
               alignment: Alignment.center,
               decoration: BoxDecoration(color: Color(0xff24263B), borderRadius: BorderRadius.circular(20)),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    child: Text(
-                      calc.getResult(_bmi),
-                      style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
-                    ),
+                  Text(
+                    calc.getResult(_bmi),
+                    style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
                   ),
-                  Container(
-                    child: Text(
-                      _bmi.toStringAsFixed(1),
-                      style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 100, fontWeight: FontWeight.w700, color: calc.getColor(_bmi))),
-                    ),
+                  Text(
+                    _bmi.toStringAsFixed(1),
+                    style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 100, fontWeight: FontWeight.w700, color: calc.getColor(_bmi))),
                   ),
                 ],
               ),
             ),
-            GestureDetector(
+          ),
+          Expanded(
+            flex: 2,
+            child: GestureDetector(
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.07,
                 color: Colors.red,
                 alignment: Alignment.center,
                 child: Text(
@@ -64,8 +60,8 @@ class ResultPage extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => BmiCalc()));
               },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

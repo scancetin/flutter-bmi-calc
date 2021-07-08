@@ -11,23 +11,19 @@ class GenderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
-      child: Container(
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.only(bottom: 20),
-                child: Icon(genderType == "FEMALE" ? FontAwesomeIcons.venus : FontAwesomeIcons.mars, size: 80),
-              ),
-              Container(
-                child: Text(
-                  genderType,
-                  style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20)),
-                ),
-              )
-            ],
-          )),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            margin: EdgeInsets.only(bottom: 20),
+            child: Icon(genderType == "FEMALE" ? FontAwesomeIcons.venus : FontAwesomeIcons.mars, size: 80),
+          ),
+          Text(
+            genderType,
+            style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20)),
+          )
+        ],
+      ),
       onTap: onPressed,
     );
   }
